@@ -43,7 +43,7 @@ syn match haskellFloat "\<[0-9]\+\.[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
 syn match haskellDelimiter  "(\|)\|\[\|\]\|,\|;\|{\|}"
 syn keyword haskellInfix infix infixl infixr
 syn keyword haskellBottom undefined error
-syn match haskellOperators "\([-!#$%&\*\+/<=>\?@\\^|~:]\|\<_\>\|\s\+'\{1,2}\)"
+syn match haskellOperators "\([-!#$%&\*\+/<=>\?@\\^|~:]\|\<_\>\)"
 syn match haskellDot "\."
 syn match haskellLineComment "---*\([^-!#$%&\*\+./<=>\?@\\^|~].*\)\?$" contains=@Spell
 syn match haskellBacktick "`[A-Za-z_][A-Za-z0-9_\.]*'*`"
@@ -52,7 +52,7 @@ syn region haskellBlockComment start="{-" end="-}" contains=haskellBlockComment,
 syn region haskellPragma start="{-#" end="#-}"
 syn match haskellIdentifier "[_a-z][a-zA-z0-9_]*'*" contained
 syn match haskellChar "'[^'\\]'\|'\\.'\|'\\u[0-9a-fA-F]\{4}'"
-syn match haskellType "\<[A-Z][a-zA-Z0-9_]*\>'*"
+syn match haskellType "\(\<[A-Z][a-zA-Z0-9_]*\>\|'\<[A-Z][a-zA-Z0-9_]\+\>\)'*"
 syn region haskellRecordBlock start="[A-Z][a-zA-Z0-9]*'*\s\+{" end="[^-]}" keepend
   \ contains=haskellType,haskellDelimiter,haskellOperators,haskellDot,haskellRecordField,haskellString,haskellChar,haskellFloat,haskellNumber,haskellBacktick,haskellLineComment, haskellBlockComment,haskellPragma,haskellBottom,haskellConditional,haskellStatement,haskellWhere,haskellLet
 syn match haskellQuasiQuoteDelimiters "\[[_a-z][a-zA-z0-9_]*'*|\||\]" contained
